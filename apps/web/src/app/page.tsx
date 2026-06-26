@@ -1,9 +1,10 @@
+import { RoundCardShowcase } from '@/components/game/round-card-showcase';
 import { SiteHeader } from '@/components/layout/site-header';
 import { ButtonLink } from '@/components/ui/button-link';
 
 const stats = [
   {
-    value: '3–5',
+    value: '3-5',
     label: 'Players per room',
   },
   {
@@ -52,45 +53,47 @@ export default function LandingPage() {
             <div className="absolute -right-28 top-0 size-96 rounded-full bg-[#FFCA00]/10 blur-3xl" />
           </div>
 
-          <div className="relative mx-auto grid min-h-[calc(100vh-80px)] w-full max-w-7xl items-center gap-14 px-5 py-16 sm:px-7 lg:grid-cols-[1fr_0.95fr] lg:px-10 lg:py-20">
+          <div className="relative mx-auto grid min-h-[calc(100svh-80px)] w-full max-w-7xl items-center gap-8 px-5 py-8 sm:px-7 sm:py-10 lg:grid-cols-[1fr_0.95fr] lg:gap-10 lg:px-10 lg:py-10">
             <div className="max-w-2xl">
               <div className="inline-flex items-center gap-2 rounded-full bg-[#EAFBFC] px-4 py-2 text-xs font-bold uppercase tracking-[0.18em] text-[#008F98]">
                 <span className="size-2 rounded-full bg-[#2DCCD3]" />
                 Multiplayer card strategy
               </div>
 
-              <h1 className="mt-7 font-[family-name:var(--font-sora)] text-[clamp(2.5rem,5vw,4.6rem)] font-extrabold leading-[1.03] tracking-[-0.045em] text-[#16343D]">
+              <h1 className="mt-5 font-[family-name:var(--font-sora)] text-[clamp(2.35rem,4.6vw,4.2rem)] font-extrabold leading-[1.02] tracking-[-0.045em] text-[#16343D]">
                 Play smarter.
-                <span className="mt-2 block text-[#2DCCD3]">
+                <span className="mt-1 block text-[#2DCCD3]">
                   Win the Kitti.
                 </span>
               </h1>
 
-              <p className="mt-7 max-w-xl text-base leading-8 text-[#5C747C] sm:text-lg">
+              <p className="mt-5 max-w-xl text-base leading-7 text-[#5C747C] sm:text-lg">
                 Arrange nine cards into three ordered hands, compete across
                 three rounds and experience a clean multiplayer card game built
                 around strategy.
               </p>
 
-              <div className="mt-9 flex flex-col gap-3 sm:flex-row">
-                <ButtonLink href="/login">Start Playing</ButtonLink>
+              <div className="mt-7 flex flex-col gap-3 sm:flex-row">
+                <ButtonLink href="/login" size="lg">
+                  Start Playing
+                </ButtonLink>
 
-                <ButtonLink href="/how-to-play" variant="secondary">
+                <ButtonLink href="/how-to-play" variant="secondary" size="lg">
                   Learn How to Play
                 </ButtonLink>
               </div>
 
-              <dl className="mt-12 grid max-w-xl grid-cols-1 gap-3 sm:grid-cols-3">
+              <dl className="mt-8 grid max-w-xl grid-cols-1 gap-3 sm:grid-cols-3">
                 {stats.map((stat) => (
                   <div
                     key={stat.label}
-                    className="rounded-3xl border border-[#16343D]/8 bg-white p-5 shadow-[0_10px_35px_rgb(18_79_86_/_8%)]"
+                    className="rounded-3xl border border-[#16343D]/8 bg-white p-4 shadow-[0_10px_35px_rgb(18_79_86_/_8%)]"
                   >
-                    <dd className="font-[family-name:var(--font-sora)] text-3xl font-extrabold text-[#2DCCD3]">
+                    <dd className="font-[family-name:var(--font-sora)] text-2xl font-extrabold text-[#2DCCD3]">
                       {stat.value}
                     </dd>
 
-                    <dt className="mt-2 text-sm font-medium text-[#5C747C]">
+                    <dt className="mt-1 text-sm font-medium text-[#5C747C]">
                       {stat.label}
                     </dt>
                   </div>
@@ -99,59 +102,7 @@ export default function LandingPage() {
             </div>
 
             <div className="relative mx-auto w-full max-w-xl">
-              <div className="absolute -left-8 -top-8 size-24 rounded-full bg-[#FFCA00]" />
-
-              <div className="relative overflow-hidden rounded-[2.5rem] bg-[#EAFBFC] p-6 shadow-[0_30px_80px_rgb(18_79_86_/_14%)] sm:p-9">
-                <div className="rounded-[2rem] bg-white p-6 sm:p-10">
-                  <div className="flex min-h-80 items-center justify-center">
-                    <div className="grid w-full max-w-sm grid-cols-3 items-center gap-3">
-                      {[
-                        {
-                          value: 'A♠',
-                          red: false,
-                        },
-                        {
-                          value: 'K♥',
-                          red: true,
-                        },
-                        {
-                          value: 'Q♣',
-                          red: false,
-                        },
-                      ].map((card, index) => (
-                        <div
-                          key={card.value}
-                          className={`flex aspect-[0.69] items-start rounded-3xl border-2 bg-white p-4 font-[family-name:var(--font-sora)] text-2xl font-extrabold shadow-[0_18px_35px_rgb(18_79_86_/_12%)] ${
-                            index === 1
-                              ? '-translate-y-7 border-[#FFCA00]'
-                              : 'border-[#2DCCD3]/25'
-                          } ${
-                            card.red ? 'text-[#E85661]' : 'text-[#16343D]'
-                          }`}
-                        >
-                          {card.value}
-                        </div>
-                      ))}
-                    </div>
-                  </div>
-
-                  <div className="mt-3 flex justify-center">
-                    <div className="rounded-full bg-[#2DCCD3] px-6 py-3 text-sm font-bold text-white">
-                      Arrange · Lock · Reveal
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              <div className="absolute -bottom-5 -right-5 hidden rounded-3xl bg-[#FFCA00] px-6 py-5 shadow-xl sm:block">
-                <p className="text-xs font-bold uppercase tracking-wider text-[#16343D]/70">
-                  Three rounds
-                </p>
-
-                <p className="mt-1 font-[family-name:var(--font-sora)] text-xl font-extrabold text-[#16343D]">
-                  One winner
-                </p>
-              </div>
+              <RoundCardShowcase />
             </div>
           </div>
         </section>

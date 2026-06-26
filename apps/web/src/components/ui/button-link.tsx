@@ -1,31 +1,38 @@
+import type { ComponentPropsWithoutRef } from 'react';
 import Link from 'next/link';
 
-type ButtonLinkProps = {
-  href: string;
-  children: React.ReactNode;
-  variant?: 'primary' | 'secondary' | 'yellow';
+type ButtonLinkProps = ComponentPropsWithoutRef<typeof Link> & {
+  variant?: 'primary' | 'secondary' | 'yellow' | 'glass';
+  size?: 'sm' | 'md' | 'lg';
 };
 
 const variants = {
-  primary:
-    'bg-[#2DCCD3] text-white shadow-[0_12px_28px_rgb(45_204_211_/_25%)] hover:bg-[#21B8BF]',
+  primary: 'clay-button--primary focus-visible:outline-[#2DCCD3]',
 
-  secondary:
-    'border border-[#2DCCD3] bg-white text-[#008F98] hover:bg-[#EAFBFC]',
+  secondary: 'clay-button--secondary focus-visible:outline-[#2DCCD3]',
 
-  yellow:
-    'bg-[#FFCA00] text-[#16343D] shadow-[0_12px_28px_rgb(255_202_0_/_22%)] hover:bg-[#F2BD00]',
+  yellow: 'clay-button--yellow focus-visible:outline-[#FFCA00]',
+
+  glass: 'clay-button--glass focus-visible:outline-white',
+} as const;
+
+const sizes = {
+  sm: 'min-h-11 px-6 text-sm',
+  md: 'min-h-12 px-7 py-3 text-sm',
+  lg: 'min-h-13 px-8 py-3 text-base',
 } as const;
 
 export function ButtonLink({
-  href,
   children,
   variant = 'primary',
+  size = 'md',
+  className = '',
+  ...props
 }: ButtonLinkProps) {
   return (
     <Link
-      href={href}
-      className={`inline-flex min-h-13 items-center justify-center rounded-full px-7 py-3 text-sm font-bold transition duration-200 ${variants[variant]}`}
+      className={`clay-button inline-flex transform-gpu items-center justify-center font-bold transition-all duration-300 ease-out ${sizes[size]} ${variants[variant]} ${className}`}
+      {...props}
     >
       {children}
     </Link>

@@ -1,5 +1,6 @@
 import Link from 'next/link';
 
+import { ButtonLink } from '@/components/ui/button-link';
 import { KittiLogo } from '@/components/ui/kitti-logo';
 
 const links = [
@@ -40,12 +41,12 @@ export function SiteHeader() {
           ))}
         </nav>
 
-        <Link
+        <ButtonLink
           href="/login"
-          className="inline-flex min-h-11 items-center justify-center rounded-full bg-[#2DCCD3] px-6 text-sm font-bold text-white shadow-[0_8px_20px_rgb(45_204_211_/_22%)] transition hover:bg-[#21B8BF]"
+          size="sm"
         >
           Login
-        </Link>
+        </ButtonLink>
       </div>
     </header>
   );
