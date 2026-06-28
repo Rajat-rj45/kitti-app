@@ -1,0 +1,63 @@
+import type { WaitingRoomData } from '@/features/waiting-room/waiting-room-types';
+
+export const MOCK_WAITING_ROOM: WaitingRoomData = {
+  id: 'room-emerald-01',
+  roomName: 'Morning Kitti',
+  roomCode: 'KITTI1',
+  hostPlayerId: 'player-rajat',
+  currentPlayerId: 'player-rajat',
+  ruleVersion: 'KTI-RULES-1.0',
+
+  rules: {
+    capacity: 3,
+    entryCoins: 10,
+    platformFee: 2,
+    expectedPot: 30,
+    expectedWinnerPayout: 28,
+    turnSeconds: 20,
+    reconnectSeconds: 60,
+    chatEnabled: true,
+  },
+
+  seats: [
+    {
+      seatNumber: 1,
+      playerId: 'player-rajat',
+      displayName: 'Rajat',
+      initials: 'R',
+      avatarTone: 'cyan',
+      isHost: true,
+      isCurrentPlayer: true,
+      isReady: false,
+      entryReserved: true,
+      connectionState: 'ONLINE',
+      pingMs: 42,
+    },
+    {
+      seatNumber: 2,
+      playerId: 'player-aman',
+      displayName: 'Aman',
+      initials: 'A',
+      avatarTone: 'yellow',
+      isHost: false,
+      isCurrentPlayer: false,
+      isReady: true,
+      entryReserved: true,
+      connectionState: 'ONLINE',
+      pingMs: 58,
+    },
+    {
+      seatNumber: 3,
+      playerId: 'player-neeraj',
+      displayName: 'Neeraj',
+      initials: 'N',
+      avatarTone: 'teal',
+      isHost: false,
+      isCurrentPlayer: false,
+      isReady: true,
+      entryReserved: true,
+      connectionState: 'ONLINE',
+      pingMs: 65,
+    },
+  ],
+};

@@ -1,6 +1,9 @@
 @import "tailwindcss";
 
 :root {
+  --font-inter: Inter, "Segoe UI", Arial, Helvetica, sans-serif;
+  --font-sora: Sora, "Trebuchet MS", "Segoe UI", Arial, Helvetica, sans-serif;
+
   --background: #ffffff;
   --background-soft: #f4fbfc;
   --background-cyan: #eafafa;
@@ -69,7 +72,7 @@ body {
   overflow-x: hidden;
   background: #ffffff !important;
   color: var(--text-primary);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-inter);
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
 }
@@ -196,13 +199,22 @@ a {
   --clay-dark: rgb(138 106 0 / 18%);
 }
 
-.clay-button--glass {
-  --clay-bg: rgb(255 255 255 / 22%);
-  --clay-bg-hover: rgb(255 255 255 / 14%);
+.clay-button--success {
+  --clay-bg: #35d98b;
+  --clay-bg-hover: #24a878;
   --clay-text: #ffffff;
-  --clay-border: rgb(255 255 255 / 70%);
-  --clay-shadow: rgb(18 79 86 / 18%);
-  --clay-dark: rgb(20 46 56 / 14%);
+  --clay-shadow: rgb(36 168 120 / 32%);
+  --clay-dark: rgb(12 92 63 / 22%);
+}
+
+.clay-button--glass {
+  --clay-bg: #7de2e6;
+  --clay-bg-hover: #2dccd3;
+  --clay-text: #ffffff;
+  --clay-border: rgb(255 255 255 / 62%);
+  --clay-shadow: rgb(45 204 211 / 28%);
+  --clay-dark: rgb(0 143 152 / 22%);
+  --clay-light: rgb(255 255 255 / 48%);
 }
 
 .clay-button--dark {
